@@ -1,0 +1,59 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Add a lock with a latch",
+        "description": "Creates one HomeKit accessory for a lock. You pair it in the Home app with the code HA shows afterwards.",
+        "data": {
+          "entity_id": "Lock",
+          "name": "Name in Apple Home",
+          "latch_name": "Name of the latch",
+          "latch_action": "Latch action",
+          "reset_seconds": "Fall back after",
+          "expose_lock": "Also show the lock itself"
+        },
+        "data_description": {
+          "entity_id": "The Home Assistant lock (for example a Nuki).",
+          "name": "Name of the HomeKit accessory and of its lock.",
+          "latch_name": "Name of the second lock, the momentary one.",
+          "latch_action": "What moving the latch does: lock.open unlatches (Nuki), lock.unlock just unlocks.",
+          "reset_seconds": "Seconds until the latch is back to secured.",
+          "expose_lock": "Turn off for a Nuki Opener: then only the latch is shown and the ring-to-open state stays out of HomeKit."
+        }
+      }
+    },
+    "error": {
+      "no_free_port": "No free port left between 21100 and 21199."
+    },
+    "abort": {
+      "already_configured": "This lock already has an accessory."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Latch settings",
+        "data": {
+          "latch_name": "Name of the latch",
+          "latch_action": "Latch action",
+          "reset_seconds": "Fall back after",
+          "expose_lock": "Also show the lock itself"
+        },
+        "data_description": {
+          "latch_name": "Name of the second lock, the momentary one.",
+          "latch_action": "What moving the latch does: lock.open unlatches (Nuki), lock.unlock just unlocks.",
+          "reset_seconds": "Seconds until the latch is back to secured.",
+          "expose_lock": "Turn off for a Nuki Opener: then only the latch is shown and the ring-to-open state stays out of HomeKit."
+        }
+      }
+    }
+  },
+  "selector": {
+    "latch_action": {
+      "options": {
+        "open": "Open (lock.open, unlatch)",
+        "unlock": "Unlock (lock.unlock)"
+      }
+    }
+  }
+}

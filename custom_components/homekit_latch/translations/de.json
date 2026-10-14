@@ -1,0 +1,59 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Schloss mit Latch hinzufügen",
+        "description": "Legt ein HomeKit-Zubehör für ein Schloss an. Gekoppelt wird es in der Home-App mit dem Code, den HA danach zeigt.",
+        "data": {
+          "entity_id": "Schloss",
+          "name": "Name in Apple Home",
+          "latch_name": "Name des Latch",
+          "latch_action": "Aktion des Latch",
+          "reset_seconds": "Zurück auf zu nach",
+          "expose_lock": "Schloss selbst auch anzeigen"
+        },
+        "data_description": {
+          "entity_id": "Das Schloss in Home Assistant (zum Beispiel ein Nuki).",
+          "name": "Name des HomeKit-Zubehörs und seines Schlosses.",
+          "latch_name": "Name des zweiten Schlosses, das nur kurz aufgeht.",
+          "latch_action": "Was der Latch tut: lock.open öffnet die Falle (Nuki), lock.unlock entriegelt nur.",
+          "reset_seconds": "Sekunden, bis der Latch wieder auf zu steht.",
+          "expose_lock": "Beim Nuki Opener ausschalten: dann erscheint nur der Latch und der Ring-to-Open-Zustand bleibt aus HomeKit draußen."
+        }
+      }
+    },
+    "error": {
+      "no_free_port": "Kein freier Port zwischen 21100 und 21199."
+    },
+    "abort": {
+      "already_configured": "Für dieses Schloss gibt es schon ein Zubehör."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Latch-Einstellungen",
+        "data": {
+          "latch_name": "Name des Latch",
+          "latch_action": "Aktion des Latch",
+          "reset_seconds": "Zurück auf zu nach",
+          "expose_lock": "Schloss selbst auch anzeigen"
+        },
+        "data_description": {
+          "latch_name": "Name des zweiten Schlosses, das nur kurz aufgeht.",
+          "latch_action": "Was der Latch tut: lock.open öffnet die Falle (Nuki), lock.unlock entriegelt nur.",
+          "reset_seconds": "Sekunden, bis der Latch wieder auf zu steht.",
+          "expose_lock": "Beim Nuki Opener ausschalten: dann erscheint nur der Latch und der Ring-to-Open-Zustand bleibt aus HomeKit draußen."
+        }
+      }
+    }
+  },
+  "selector": {
+    "latch_action": {
+      "options": {
+        "open": "Öffnen (lock.open, Falle)",
+        "unlock": "Entriegeln (lock.unlock)"
+      }
+    }
+  }
+}
